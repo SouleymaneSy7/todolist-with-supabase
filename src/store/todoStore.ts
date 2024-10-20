@@ -1,7 +1,13 @@
 import { create } from "zustand";
 
+type TodosTypes = {
+  id: number;
+  task: string;
+  is_complete: false;
+};
+
 type State = {
-  count: number;
+  todos: TodosTypes[];
 };
 
 type Actions = {
@@ -14,6 +20,9 @@ type Actions = {
 const useTodoStore = create<State & Actions>((set) => ({
   todos: [],
   getTodos: () => {},
+  addTodos: () => {},
+  deleteTodos: () => {},
+  completeTodos: () => {},
 }));
 
 export default useTodoStore;
