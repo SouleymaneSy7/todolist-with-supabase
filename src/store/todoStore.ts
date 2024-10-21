@@ -58,6 +58,8 @@ const useTodoStore = create<State & Actions>((set) => ({
           set(() => ({ errors: "" }));
         task = "";
       }
+
+      window.location.reload();
     }
   },
   deleteTodos: async (id: number): Promise<void> => {
@@ -67,7 +69,7 @@ const useTodoStore = create<State & Actions>((set) => ({
         todos: state.todos.filter((todo) => todo.id !== id),
       }));
       if (error) {
-        console.error(error);
+        console.error("Error - Delete Todos", error);
       }
       window.location.reload();
     } catch (error) {
