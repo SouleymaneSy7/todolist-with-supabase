@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply font-mosk;
+}
+
+@layer base {
+  @font-face {
+    font-family: "Mosk";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./assets/fonts/mosk-regular.woff2) format("woff2"),
+      url(./assets/fonts/mosk-regular.woff) format("woff"),
+      url(./assets/fonts/mosk-regular.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: "Mosk";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(./assets/fonts/mosk-bold.woff2) format("woff2"),
+      url(./assets/fonts/mosk-bold.woff) format("woff"),
+      url(./assets/fonts/mosk-bold.ttf) format("truetype");
+  }
+}
