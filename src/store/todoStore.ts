@@ -20,11 +20,10 @@ type Actions = {
   deleteTodos: (id: number) => Promise<void>;
   getTodos: () => Promise<void>;
   completeTodos: (id: number, isCompleted: boolean) => Promise<void>;
+  deleteCompletedTodos: () => Promise<void>;
 };
 
 const useTodoStore = create<State & Actions>((set) => ({
-  // task: "",
-  // completed: false,
   errors: "",
   todos: [],
   getTodos: async (): Promise<void> => {
@@ -89,6 +88,19 @@ const useTodoStore = create<State & Actions>((set) => ({
       window.location.reload();
     } catch (error) {
       console.log("Error - Complete Todos", error);
+    }
+  },
+  deleteCompletedTodos: async () => {
+    try {
+      const { error } = await supabase.from("todos").delete().eq("is_complete", true);
+
+      if (error) {
+        console.error("Error - Delete Completed Todos", error);
+      }
+
+      window.location.reload();
+    } catch (error) {
+      console.log("Error - Delete Completed Todos", error);
     }
   },
 }));
