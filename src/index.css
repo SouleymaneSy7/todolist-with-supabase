@@ -2,8 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Colors */
+  /* Light Mode Colors */
+  --color-primary-light: #07b6d5;
+  --color-secondary-light: hsl(228, 100%, 98%);
+  --color-body-background-light: hsl(0, 0%, 100%);
+  --color-elements-light: hsl(0, 0%, 0%);
+  --color-text-light: hsl(0, 0%, 0%);
+
+  /* Dark Mode Colors */
+  --color-primary-dark: hsl(189, 94%, 43%);
+  --color-secondary-dark: hsl(219, 31%, 18%);
+  --color-body-background-dark: hsl(221, 50%, 11%);
+  --color-elements-light: hsl(0, 0%, 100%);
+  --color-text-dark: hsl(0, 0%, 100%);
+
+  /* Fonts */
+  --fs-logo: clamp(2rem, 1.8696rem + 0.6522vw, 2.375rem);
+  --fs-base: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
+  --fs-small: clamp(0.8125rem, 0.7908rem + 0.1087vw, 0.875rem);
+
+  --fw-bold: 700;
+  --fw-regular: 400;
+}
+
 body {
-  @apply font-mosk;
+  @apply font-mosk text-fs-base text-color-text-light;
 }
 
 @layer base {
