@@ -2,7 +2,7 @@ import React from "react";
 
 type InputsProps = {
   id?: string;
-  type: "text" | "email" | "search";
+  type: "text" | "checkbox";
 } & React.ComponentPropsWithoutRef<"input">;
 
 const Inputs: React.FC<InputsProps> = ({ id, type, ...delegatedProps }) => {
