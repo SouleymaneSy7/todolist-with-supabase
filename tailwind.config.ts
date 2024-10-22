@@ -33,11 +33,19 @@ export default {
 
     extend: {
       colors: {
+        // Light Theme
         "color-primary-light": "var(--color-primary-light)",
         "color-secondary-light": "var(--color-secondary-light)",
         "color-body-background-light": "var(--color-body-background-light)",
         "color-elements-light": "var(--color-elements-light)",
         "color-text-light": "var(--color-text-light)",
+
+        // Dark Theme
+        "color-primary-dark": "var(--color-primary-dark)",
+        "color-secondary-dark": "var(--color-secondary-dark)",
+        "color-body-background-dark": "var(--color-body-background-dark)",
+        "color-elements-dark": "var(--color-elements-dark)",
+        "color-text-dark": "var(--color-text-dark)",
       },
 
       backgroundImage: {
