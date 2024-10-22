@@ -9,8 +9,6 @@ type TodosTypes = {
 };
 
 type State = {
-  // task: string;
-  // completed: boolean;
   errors: string;
   todos: TodosTypes[];
 };
@@ -92,7 +90,10 @@ const useTodoStore = create<State & Actions>((set) => ({
   },
   deleteCompletedTodos: async () => {
     try {
-      const { error } = await supabase.from("todos").delete().eq("is_complete", true);
+      const { error } = await supabase
+        .from("todos")
+        .delete()
+        .eq("is_complete", true);
 
       if (error) {
         console.error("Error - Delete Completed Todos", error);
