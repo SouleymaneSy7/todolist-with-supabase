@@ -37,7 +37,8 @@ const Main: React.FC = () => {
     }
   }, [filterOption, todos]);
 
-  const taskRemainTerm = todos.length !== 1 ? "items" : "item";
+  const taskRemainTerm =
+    todos.filter((task) => !task.is_complete).length > 1 ? "items" : "item";
   const remainTask = () => {
     return todos.filter((task) => !task.is_complete).length;
   };

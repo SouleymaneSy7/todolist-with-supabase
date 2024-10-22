@@ -2,6 +2,7 @@ import React, { FormEvent } from "react";
 import Inputs from "./Inputs";
 import useTodoStore from "../store/todoStore";
 import { LinkIcon } from "../Icons/Icons.component";
+import VisuallyHidden from "./VisuallyHidden";
 
 const InputForm: React.FC = () => {
   const id = React.useId();
@@ -32,6 +33,7 @@ const InputForm: React.FC = () => {
           setTask(event.target.value);
         }}
       />
+      <VisuallyHidden>Add a task todo</VisuallyHidden>
     </form>
   );
 };

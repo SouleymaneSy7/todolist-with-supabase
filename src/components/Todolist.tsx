@@ -4,6 +4,7 @@ import useTodoStore from "../store/todoStore";
 
 import Inputs from "./Inputs";
 import Buttons from "./Buttons";
+import VisuallyHidden from "./VisuallyHidden";
 import { TrashIcon } from "../Icons/Icons.component";
 
 type TodosTypes = {
@@ -19,15 +20,18 @@ const Todolist: React.FC<TodosTypes> = ({ id, task, is_complete }) => {
 
   return (
     <div className="flex  items-center gap-4 w-full p-3 border border-color-elements-light dark:border-color-elements-dark bg-color-secondary-light dark:bg-color-secondary-dark  mb-2">
-      <Inputs
-        type={"checkbox"}
-        checked={checked}
-        onChange={() => {
-          setChecked(!checked);
-          completedTodos(id, !checked);
-        }}
-        className={`w-8 h-8`}
-      />
+      <div>
+        <Inputs
+          type={"checkbox"}
+          checked={checked}
+          onChange={() => {
+            setChecked(!checked);
+            completedTodos(id, !checked);
+          }}
+          className={`w-8 h-8`}
+        />
+        <VisuallyHidden>Complete the task</VisuallyHidden>
+      </div>
 
       <p
         className="w-full text-color-text-light dark:text-color-text-dark"
@@ -47,6 +51,7 @@ const Todolist: React.FC<TodosTypes> = ({ id, task, is_complete }) => {
         }}
       >
         <TrashIcon className="fill-color-text-light dark:fill-color-text-dark" />
+        <VisuallyHidden>Delete the task</VisuallyHidden>
       </Buttons>
     </div>
   );

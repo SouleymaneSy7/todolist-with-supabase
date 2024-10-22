@@ -2,6 +2,7 @@ import React from "react";
 import Buttons from "./Buttons";
 import Title from "./Title";
 import { MoonIcon, SunIcon } from "../Icons/Icons.component";
+import VisuallyHidden from "./VisuallyHidden";
 
 const Header: React.FC = () => {
   const [isDark, setIsDark] = React.useState<boolean>(false);
@@ -44,6 +45,7 @@ const Header: React.FC = () => {
             <span>
               <SunIcon className="w-[30px] h-[30px] fill-color-secondary-light" />
             </span>
+            <VisuallyHidden>Toggle theme to Light</VisuallyHidden>
           </React.Fragment>
         ) : (
           <React.Fragment>
@@ -51,6 +53,7 @@ const Header: React.FC = () => {
             <span>
               <MoonIcon className="w-[30px] h-[30px] fill-color-secondary-light" />
             </span>
+            <VisuallyHidden>Toggle theme to Dark</VisuallyHidden>
           </React.Fragment>
         )}
       </Buttons>
