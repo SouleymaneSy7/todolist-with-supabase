@@ -47,7 +47,7 @@ const Main: React.FC = () => {
       <InputForm />
 
       {todos.length > 0 ? (
-        <section className="flex justify-center items-center gap-9 mb-5 bg-color-secondary-light border border-color-elements-light px-4 py-3 md: p-4">
+        <section className="flex justify-center items-center gap-9 mb-5 bg-color-secondary-light dark:bg-color-secondary-dark border border-color-elements-light dark:border-color-elements-dark px-4 py-3 md: p-4">
           <p className="hidden md:inline-block">
             {remainTask()} {taskRemainTerm} Left
           </p>
@@ -57,7 +57,7 @@ const Main: React.FC = () => {
               <Buttons
                 type={"button"}
                 key={index}
-                className="hover:text-color-primary-light transition-colors"
+                className="text-color-text-light dark:text-color-text-dark hover:text-color-primary-light dark:hover:text-color-primary-dark transition-colors"
                 onClick={() => {
                   setFilterOption(item);
                 }}
@@ -69,7 +69,7 @@ const Main: React.FC = () => {
 
           <Buttons
             type={"button"}
-            className="hidden md:inline-block"
+            className="hidden md:inline-block hover:text-color-primary-light transition-colors"
             onClick={deleteCompletedTodos}
           >
             Clear Completed

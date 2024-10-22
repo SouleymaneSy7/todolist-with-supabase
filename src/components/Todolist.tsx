@@ -18,7 +18,7 @@ const Todolist: React.FC<TodosTypes> = ({ id, task, is_complete }) => {
   const deleteTodos = useTodoStore((state) => state.deleteTodos);
 
   return (
-    <div className="flex  items-center gap-4 w-full p-3 border border-color-elements-light bg-color-secondary-light  mb-2">
+    <div className="flex  items-center gap-4 w-full p-3 border border-color-elements-light dark:border-color-elements-dark bg-color-secondary-light dark:bg-color-secondary-dark  mb-2">
       <Inputs
         type={"checkbox"}
         checked={checked}
@@ -29,7 +29,15 @@ const Todolist: React.FC<TodosTypes> = ({ id, task, is_complete }) => {
         className={`w-8 h-8`}
       />
 
-      <p className="w-full">{task}</p>
+      <p
+        className="w-full text-color-text-light dark:text-color-text-dark"
+        style={{
+          opacity: checked ? "65%" : "100%",
+          textDecoration: checked ? "line-through" : "none",
+        }}
+      >
+        {task}
+      </p>
 
       <Buttons
         type={"button"}
@@ -38,7 +46,7 @@ const Todolist: React.FC<TodosTypes> = ({ id, task, is_complete }) => {
           deleteTodos(id);
         }}
       >
-        <TrashIcon />
+        <TrashIcon className="fill-color-text-light dark:fill-color-text-dark" />
       </Buttons>
     </div>
   );
