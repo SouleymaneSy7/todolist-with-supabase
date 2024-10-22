@@ -18,15 +18,15 @@ const InputForm: React.FC = () => {
 
   return (
     <form
-      className="flex items-center justify-between gap-4 mb-7 bg-color-secondary-light px-5 h-12 md:h-14"
+      className="flex items-center justify-between gap-4 md:gap-6 mb-7 md:mb-8  bg-color-secondary-light px-5 h-12 border border-color-elements-light md:h-14"
       onSubmit={handleSubmit}
     >
-      <LinkIcon className=" fill-color-elements-light w-6 h-6" />
+      <LinkIcon className="fill-color-elements-light w-6 h-6" />
       <Inputs
         type={"text"}
         id={inputID}
         placeholder="Create a new todo..."
-        className="w-full bg-color-secondary-light h-full placeholder:text-fs-base"
+        className="w-full bg-color-secondary-light h-full placeholder:text-fs-base placeholder:font-fw-semi-bold outline-none font-fw-semi-bold text-fs-base text-color-text-light"
         value={task}
         onChange={(event) => {
           setTask(event.target.value);

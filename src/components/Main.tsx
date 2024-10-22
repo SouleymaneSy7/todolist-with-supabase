@@ -46,40 +46,48 @@ const Main: React.FC = () => {
     <main className="container">
       <InputForm />
 
-      <div className="flex justify-center items-center gap-9 mb-5">
-        <div>
-          <p>
+      {todos.length > 0 ? (
+        <section className="flex justify-center items-center gap-9 mb-5 bg-color-secondary-light border border-color-elements-light px-4 py-3 md: p-4">
+          <p className="hidden md:inline-block">
             {remainTask()} {taskRemainTerm} Left
           </p>
-        </div>
-        {filter.map((f, index) => (
+
+          <div className="flex gap-8 md:px-8">
+            {filter.map((item, index) => (
+              <Buttons
+                type={"button"}
+                key={index}
+                className="hover:text-color-primary-light transition-colors"
+                onClick={() => {
+                  setFilterOption(item);
+                }}
+              >
+                {item}
+              </Buttons>
+            ))}
+          </div>
+
           <Buttons
             type={"button"}
-            key={index}
-            className=" p-4 text-blue-700 border border-blue-700 "
-            onClick={() => {
-              setFilterOption(f);
-              console.log(filterOption);
-            }}
+            className="hidden md:inline-block"
+            onClick={deleteCompletedTodos}
           >
-            {f}
+            Clear Completed
           </Buttons>
+        </section>
+      ) : null}
+
+      <section>
+        {filteredTodos.map((todo) => (
+          <React.Fragment key={todo.id}>
+            <Todolist
+              id={todo.id}
+              task={todo.task}
+              is_complete={todo.is_complete}
+            />
+          </React.Fragment>
         ))}
-
-        <Buttons type={"button"} onClick={deleteCompletedTodos}>
-          Clear Completed
-        </Buttons>
-      </div>
-
-      {filteredTodos.map((todo) => (
-        <React.Fragment key={todo.id}>
-          <Todolist
-            id={todo.id}
-            task={todo.task}
-            is_complete={todo.is_complete}
-          />
-        </React.Fragment>
-      ))}
+      </section>
     </main>
   );
 };

@@ -4,6 +4,7 @@ import useTodoStore from "../store/todoStore";
 
 import Inputs from "./Inputs";
 import Buttons from "./Buttons";
+import { TrashIcon } from "../Icons/Icons.component";
 
 type TodosTypes = {
   id: number;
@@ -17,7 +18,7 @@ const Todolist: React.FC<TodosTypes> = ({ id, task, is_complete }) => {
   const deleteTodos = useTodoStore((state) => state.deleteTodos);
 
   return (
-    <div className="flex w-full justify-between items-center p-4 border bg-slate-600 text-white mb-2">
+    <div className="flex  items-center gap-4 w-full p-3 border border-color-elements-light bg-color-secondary-light  mb-2">
       <Inputs
         type={"checkbox"}
         checked={checked}
@@ -28,15 +29,16 @@ const Todolist: React.FC<TodosTypes> = ({ id, task, is_complete }) => {
         className={`w-8 h-8`}
       />
 
-      <p>{task}</p>
+      <p className="w-full">{task}</p>
 
       <Buttons
         type={"button"}
+        className="w-6 h-7"
         onClick={() => {
           deleteTodos(id);
         }}
       >
-        Delete
+        <TrashIcon />
       </Buttons>
     </div>
   );
