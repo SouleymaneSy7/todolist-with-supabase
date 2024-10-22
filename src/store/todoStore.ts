@@ -43,7 +43,7 @@ const useTodoStore = create<State & Actions>((set) => ({
   },
   addTodos: async (task: string): Promise<void> => {
     if (task.length <= 3) {
-      set(() => ({ errors: "Task length should be more than 3!" }));
+      set(() => ({ errors: "Task length should be more than 3 characters!" }));
     } else {
       const { data, error } = await supabase
         .from("todos")
