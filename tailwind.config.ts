@@ -22,7 +22,7 @@ export default {
     fontSize: {
       "fs-logo": "var(--fs-logo)",
       "fs-base": "var(--fs-base)",
-      "fs-small": "var(--fs-logo)",
+      "fs-small": "var(--fs-small)",
     },
 
     fontWeight: {
@@ -33,6 +33,7 @@ export default {
 
     extend: {
       colors: {
+        "color-errors": "var(--color-errors)",
         // Light Theme
         "color-primary-light": "var(--color-primary-light)",
         "color-secondary-light": "var(--color-secondary-light)",
