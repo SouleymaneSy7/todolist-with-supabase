@@ -12,11 +12,11 @@
   --color-text-light: hsl(0, 0%, 0%);
 
   /* Dark Mode Colors */
-  --color-primary-dark: hsl(189, 94%, 43%);
+  /* --color-primary-dark: hsl(189, 94%, 43%);
   --color-secondary-dark: hsl(219, 31%, 18%);
   --color-body-background-dark: hsl(221, 50%, 11%);
-  --color-elements-light: hsl(0, 0%, 100%);
-  --color-text-dark: hsl(0, 0%, 100%);
+  --color-elements-dark: hsl(0, 0%, 100%);
+  --color-text-dark: hsl(0, 0%, 100%); */
 
   /* Fonts */
   --fs-logo: clamp(2rem, 1.8696rem + 0.6522vw, 2.375rem);
@@ -28,7 +28,8 @@
 }
 
 body {
-  @apply font-mosk text-fs-base text-color-text-light;
+  @apply relative font-mosk text-fs-base text-color-text-light overflow-x-hidden before:content-[''] before:absolute before:top-0 before:left-0 before:-z-10 before:bg-hero-img before:bg-no-repeat before:bg-cover before:w-full before:h-[360px] 
+  ;
 }
 
 @layer base {

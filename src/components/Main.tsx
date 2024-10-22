@@ -13,6 +13,9 @@ const Main: React.FC = () => {
   const [filterOption, setFilterOption] = React.useState(filter[0]);
 
   const getTodos = useTodoStore((state) => state.getTodos);
+  const deleteCompletedTodos = useTodoStore(
+    (state) => state.deleteCompletedTodos
+  );
   const todos = useTodoStore((state) => state.todos);
 
   React.useEffect(() => {
@@ -40,7 +43,7 @@ const Main: React.FC = () => {
   };
 
   return (
-    <main className="container px-8">
+    <main className="container">
       <InputForm />
 
       <div className="flex justify-center items-center gap-9 mb-5">
@@ -63,7 +66,7 @@ const Main: React.FC = () => {
           </Buttons>
         ))}
 
-        <Buttons type={"button"}>
+        <Buttons type={"button"} onClick={deleteCompletedTodos}>
           Clear Completed
         </Buttons>
       </div>

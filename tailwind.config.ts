@@ -37,6 +37,11 @@ export default {
         "color-elements-light": "var(--color-elements-light)",
         "color-text-light": "var(--color-text-light)",
       },
+
+      backgroundImage: {
+        "hero-img":
+          "linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.15)), url('./src/assets/images/hero-img.jpg')",
+      },
     },
   },
   plugins: [],

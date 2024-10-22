@@ -1,6 +1,7 @@
 import React, { FormEvent } from "react";
 import Inputs from "./Inputs";
 import useTodoStore from "../store/todoStore";
+import { LinkIcon } from "../Icons/Icons.component";
 
 const InputForm: React.FC = () => {
   const id = React.useId();
@@ -17,23 +18,20 @@ const InputForm: React.FC = () => {
 
   return (
     <form
-      className="container flex  items-center justify-between mb-7"
+      className="flex items-center justify-between gap-4 mb-7 bg-color-secondary-light px-5 h-12 md:h-14"
       onSubmit={handleSubmit}
     >
+      <LinkIcon className=" fill-color-elements-light w-6 h-6" />
       <Inputs
         type={"text"}
         id={inputID}
         placeholder="Create a new todo..."
+        className="w-full bg-color-secondary-light h-full placeholder:text-fs-base"
         value={task}
         onChange={(event) => {
           setTask(event.target.value);
         }}
-        className="border p-3 w-full"
       />
-
-      <button type="submit" className="p-3 bg-blue-600">
-        submit
-      </button>
     </form>
   );
 };
