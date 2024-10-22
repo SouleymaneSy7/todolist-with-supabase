@@ -7,7 +7,7 @@
   --color-errors: hsl(0, 72%, 51%);
 
   /* Light Mode Colors */
-  --color-primary-light: #07b6d5;
+  --color-primary-light: hsl(189, 94%, 43%);
   --color-secondary-light: hsl(228, 100%, 98%);
   --color-body-background-light: hsl(0, 0%, 100%);
   --color-elements-light: hsl(0, 0%, 0%);
