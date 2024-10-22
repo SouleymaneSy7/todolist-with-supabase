@@ -46,6 +46,7 @@ const Main: React.FC = () => {
   return (
     <main className="container">
       <InputForm />
+      
 
       {todos.length > 0 ? (
         <section className="flex justify-center items-center gap-9 mb-5 bg-color-secondary-light dark:bg-color-secondary-dark border border-color-elements-light dark:border-color-elements-dark px-4 py-3 md: p-4">
