@@ -6,7 +6,7 @@
 
 ---
 
-A simple and intuitive Todo List web application built with **React**, **Supabase**, and **Zustand** for state management.
+A simple and intuitive Todo List web application built with **React**, **Supabase**, and **Zustand**.
 
 ## Features
 
