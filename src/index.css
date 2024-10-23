@@ -33,8 +33,16 @@
 }
 
 body {
-  @apply relative font-mosk bg-color-body-background-light dark:bg-color-body-background-dark text-fs-base text-color-text-light dark:text-color-text-dark overflow-x-hidden before:content-[''] before:absolute before:top-0 before:left-0 before:-z-10 before:bg-hero-img before:bg-no-repeat before:bg-cover before:w-full before:h-[360px];
+  @apply relative font-mosk bg-color-body-background-light dark:bg-color-body-background-dark text-fs-base text-color-text-light dark:text-color-text-dark overflow-x-hidden;
   transition: background-color 500ms ease, color 500ms ease;
+}
+
+.hero-img {
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.15)
+  );
 }
 
 @layer base {
