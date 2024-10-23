@@ -1,50 +1,79 @@
-# React + TypeScript + Vite
+# Todo List With Supabase
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Preview of the app](./preview.png)
 
-Currently, two official plugins are available:
+[Live Site Demo](https://live-site-demo.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+A simple and intuitive Todo List web application built with **React**, **Supabase**, and **Zustand** for state management.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+- **Real-Time Synchronization**: Updates in real time across multiple devices.
+- **Task Management**: Create, read, and delete tasks.
+- **Light/Dark Mode**: Switch between light and dark themes for better user experience.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Tech Stack
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- **Frontend**: [React](https://reactjs.org/)
+- **State Management**: [Zustand](https://github.com/pmndrs/zustand) state management solution.
+- **Backend**: [Supabase](https://supabase.io/) (Database and API)
+- **Real-Time Updates**: Supabase subscriptions.
+- **Typescript**: [Typescript](https://typescript) - A strongly typed language, builds on top of javascript.
+- **CSS Framework**: [Tailwind CSS](https://tailwindcss.com/) for styling.
+- **Package Management**: [Pnpm](https://pnpm.io) for package management.
+- **Bundler**: [Vite](https://vite.dev) is a blazing fast frontend build tool.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Installation
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/souleymanesy7/todo-list-with-supabase.git
+   cd todo-list-with-supabase
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+3. Set up environment variables:
+
+   Create a `.env` or `.env.local` file in the root directory and add the following environment variables:
+
+   ```bash
+   VITE_SUPABASE_URL=your_supabase_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
+
+4. Run the application:
+
+   ```bash
+   pnpm dev
+   ```
+
+The app will be available at <http://localhost:3000>.
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome.
+
+1. Fork the project.
+
+2. Create your feature branch: `git checkout -b feature/my-feature`.
+
+3. Commit your changes: `git commit -m 'Add some feature'`.
+
+4. Push to the branch: `git push origin feature/my-feature`.
+
+5. Open a pull request.
+
+## Author
+
+- GitHub - [Souleymane Sy](https://github.com/SouleymaneSy7)
+- Frontend Mentor - [@SouleymaneSy7](https://www.frontendmentor.io/profile/SouleymaneSy7)
+- Dev Challenges - [Souleymane Sy](https://devchallenges.io/profile/534cd213-3165-4c16-bdcf-058e1f468da0)
+- Twitter - [@Souleymanesy43](https://twitter.com/Souleymanesy43)
