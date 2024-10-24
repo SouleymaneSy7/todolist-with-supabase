@@ -11,7 +11,7 @@ const App: React.FC = () => {
         <img
           src={heroImg}
           alt="Beautifull Mountain and rivers"
-          className="bg-no-repeat bg-cover w-full h-full"
+          className="bg-no-repeat bg-cover w-full h-full object-cover"
         />
       </div>
       <div className="min-h-screen w-full">
